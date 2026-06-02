@@ -6,7 +6,6 @@ import {
   TrendingUp,
   ArrowUp,
   ArrowDown,
-  Minus,
   CheckCircle2,
 } from 'lucide-react'
 import {
