@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Permian AI Quote — Wireframes</title>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#2563eb"/>
+    <g fill="none" stroke="#fff" stroke-width="2.4" transform="rotate(45 50 50)">
+      <rect x="34" y="34" width="32" height="32" rx="4"/>
+    </g>
+    <text x="50" y="86" font-family="monospace" font-size="9" fill="#fff" text-anchor="middle">WIRE</text>
+  </svg>
+</template>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #f0eee9; }
+  * { -webkit-font-smoothing: antialiased; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="wf-kit.jsx"></script>
+<script type="text/babel" src="wf-landing.jsx"></script>
+<script type="text/babel" src="wf-app.jsx"></script>
+<script type="text/babel" src="wf-flow.jsx"></script>
+<script type="text/babel" src="wf-review.jsx"></script>
+<script type="text/babel" src="wf-pricing.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+function App() {
+  return (
+    <DesignCanvas>
+      <DCSection id="landing" title="Landing Page" subtitle="3 directions — establishing credibility above the fold">
+        <DCArtboard id="land-a" label="A · Blueprint hero (centered, full-bleed)" width={1280} height={1180}><LandingA /></DCArtboard>
+        <DCArtboard id="land-b" label="B · Split hero (product-forward)" width={1280} height={950}><LandingB /></DCArtboard>
+        <DCArtboard id="land-c" label="C · Data-forward (live demo + ticker)" width={1280} height={1050}><LandingC /></DCArtboard>
+      </DCSection>
+
+      <DCSection id="dashboard" title="App Shell + Dashboard" subtitle="3 navigation patterns to compare">
+        <DCArtboard id="dash-a" label="A · Left sidebar (spec default)" width={1280} height={860}><DashSidebar /></DCArtboard>
+        <DCArtboard id="dash-b" label="B · Top nav (full-width)" width={1280} height={860}><DashTopNav /></DCArtboard>
+        <DCArtboard id="dash-c" label="C · Icon rail + ⌘K command bar" width={1280} height={860}><DashCommand /></DCArtboard>
+      </DCSection>
+
+      <DCSection id="upload" title="New RFQ · Upload" subtitle="Where the workflow begins">
+        <DCArtboard id="up-a" label="A · Big centered dropzone" width={1180} height={830}><UploadCentered /></DCArtboard>
+        <DCArtboard id="up-b" label="B · Guided multi-source + queue" width={1180} height={640}><UploadGuided /></DCArtboard>
+      </DCSection>
+
+      <DCSection id="processing" title="AI Processing" subtitle="Make the wait feel like work being done">
+        <DCArtboard id="pr-a" label="A · Centered engine + feed" width={1180} height={760}><ProcessingCentered /></DCArtboard>
+        <DCArtboard id="pr-b" label="B · Split engine + per-doc progress" width={1180} height={520}><ProcessingSplit /></DCArtboard>
+      </DCSection>
+
+      <DCSection id="review" title="Equipment Review ★" subtitle="The heart of the product — click any ↪ field to highlight its source">
+        <DCArtboard id="rev-a" label="A · Document leads" width={1280} height={830}><ReviewDocLead /></DCArtboard>
+        <DCArtboard id="rev-b" label="B · Scope leads (doc as rail)" width={1280} height={830}><ReviewScopeLead /></DCArtboard>
+        <DCArtboard id="rev-c" label="C · 50/50 + source traceability" width={1280} height={830}><ReviewSplit /></DCArtboard>
+      </DCSection>
+
+      <DCSection id="pricing" title="Historical Pricing Analysis" subtitle="2 directions — estimate hero vs. analyst dashboard">
+        <DCArtboard id="pri-a" label="A · Estimate hero" width={1280} height={960}><PricingHero /></DCArtboard>
+        <DCArtboard id="pri-b" label="B · Analyst dashboard" width={1280} height={900}><PricingDashboard /></DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
